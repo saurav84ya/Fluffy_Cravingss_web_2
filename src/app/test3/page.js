@@ -481,7 +481,7 @@ export default function FluffyCravingssWebsite() {
               
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed mb-10">
                 <p>
-                  At just 16, our founder discovered that baking isn't just about following recipes—
+                  At just 16, our founder discovered that baking isnt just about following recipes—
                   its about creating moments of pure joy. What started as weekend experiments in 
                   a small kitchen has grown into Patnas most beloved artisan bakery.
                 </p>

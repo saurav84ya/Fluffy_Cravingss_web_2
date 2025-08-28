@@ -285,7 +285,7 @@ export default function FluffyCravingssWebsite() {
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600 italic">"{testimonial.text}"</p>
+                <p className="text-gray-600 italic">{testimonial.text}</p>
               </div>
             ))}
           </div>

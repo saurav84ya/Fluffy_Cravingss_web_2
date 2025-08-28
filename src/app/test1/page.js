@@ -63,7 +63,7 @@ export default function FluffyCravingssWebsite() {
   const testimonials = [
     {
       name: "Priya Sharma",
-      text: "Best donuts I've ever had! So fresh and delicious. My family loves ordering from Fluffy Cravingss!",
+      text: "Best donuts I&quot;ve ever had! So fresh and delicious. My family loves ordering from Fluffy Cravingss!",
       rating: 5,
       avatar: "👩🏻"
     },
@@ -75,7 +75,7 @@ export default function FluffyCravingssWebsite() {
     },
     {
       name: "Anita Patel",
-      text: "Amazing quality and such cute presentation! My daughter's birthday was perfect with these treats.",
+      text: "Amazing quality and such cute presentation! My daughter&quot;s birthday was perfect with these treats.",
       rating: 5,
       avatar: "👩🏽"
     }

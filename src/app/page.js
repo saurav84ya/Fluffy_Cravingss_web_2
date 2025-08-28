@@ -69,7 +69,7 @@ const FluffyCravings = () => {
   const testimonials = [
     {
       name: "Priya Sharma",
-      review: "Best donuts I've ever had! So fresh and delicious! 😍",
+      review: "Best donuts I&apos;ve ever had! So fresh and delicious! 😍",
       rating: 5,
       avatar: "👩"
     },
@@ -255,7 +255,7 @@ const FluffyCravings = () => {
               What Our Customers Say 🌟
             </h2>
             <p className="text-xl text-amber-700">
-              Don't just take our word for it - hear from our happy customers!
+              Don&apos;t just take our word for it - hear from our happy customers!
             </p>
           </div>
 
@@ -276,7 +276,7 @@ const FluffyCravings = () => {
                     </div>
                   </div>
                 </div>
-                <p className="text-amber-700 italic">"{testimonial.review}"</p>
+                <p className="text-amber-700 italic">{testimonial.review}</p>
               </div>
             ))}
           </div>
@@ -287,10 +287,10 @@ const FluffyCravings = () => {
       <section id="contact" className="py-20 px-4 bg-gradient-to-r from-pink-100 to-cream-100">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-amber-900 mb-8">
-            Let's Get in Touch! 📞
+            Let&apos;s Get in Touch! 📞
           </h2>
           <p className="text-xl text-amber-700 mb-12">
-            Ready to satisfy your sweet cravings? Reach out to us and let's make your day sweeter!
+            Ready to satisfy your sweet cravings? Reach out to us and let&apos;s make your day sweeter!
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">

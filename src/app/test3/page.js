@@ -297,7 +297,7 @@ export default function FluffyCravingssWebsite() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-100 to-purple-100 border border-pink-200 rounded-full px-6 py-2 mb-8">
               <Sparkles className="w-4 h-4 text-pink-500" />
-              <span className="text-sm font-semibold text-gray-800">Patna's Most Loved Bakery</span>
+              <span className="text-sm font-semibold text-gray-800">Patnadds Most Loved Bakery</span>
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             </div>
 
@@ -363,7 +363,7 @@ export default function FluffyCravingssWebsite() {
               Why Choose <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Us?</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We don't just bake; we create experiences that bring joy to every moment
+              We dondt just bake; we create experiences that bring joy to every moment
             </p>
           </div>
 
@@ -482,8 +482,8 @@ export default function FluffyCravingssWebsite() {
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed mb-10">
                 <p>
                   At just 16, our founder discovered that baking isn't just about following recipes—
-                  it's about creating moments of pure joy. What started as weekend experiments in 
-                  a small kitchen has grown into Patna's most beloved artisan bakery.
+                  its about creating moments of pure joy. What started as weekend experiments in 
+                  a small kitchen has grown into Patnas most beloved artisan bakery.
                 </p>
                 <p>
                   Every pastry tells a story of dedication, innovation, and the belief that great 
@@ -491,7 +491,7 @@ export default function FluffyCravingssWebsite() {
                   time-honored techniques, and a lot of heart in everything we create.
                 </p>
                 <p>
-                  Today, we're proud to serve thousands of happy customers across Patna, turning 
+                  Today, were proud to serve thousands of happy customers across Patna, turning 
                   ordinary moments into extraordinary memories, one delicious bite at a time.
                 </p>
               </div>
@@ -533,8 +533,8 @@ export default function FluffyCravingssWebsite() {
                   </div>
                   
                   <blockquote className="text-lg text-gray-600 italic mb-8">
-                    "Every pastry is a canvas where I paint flavors, emotions, and memories. 
-                    Baking isn't just my passion—it's my way of spreading happiness."
+                    Every pastry is a canvas where I paint flavors, emotions, and memories. 
+                    Baking isnt just my passion—its my way of spreading happiness.
                   </blockquote>
                   
                   <div className="grid grid-cols-3 gap-4">
@@ -583,7 +583,7 @@ export default function FluffyCravingssWebsite() {
                 </div>
                 
                 <blockquote className="text-lg text-gray-700 mb-8 leading-relaxed">
-                  "{testimonial.text}"
+                  {testimonial.text}
                 </blockquote>
                 
                 <div className="flex items-center">
@@ -618,7 +618,7 @@ export default function FluffyCravingssWebsite() {
               Ready to <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Order?</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Let's create something magical together. Reach out to place your order or ask any questions!
+              Lets create something magical together. Reach out to place your order or ask any questions!
             </p>
           </div>
 

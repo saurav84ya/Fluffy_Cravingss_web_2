@@ -183,7 +183,7 @@ export default function FluffyCravingssWebsite() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-2 mb-8 text-white">
               <Sparkles className="w-4 h-4 text-pink-400" />
-              <span className="text-sm font-medium">Patna's #1 Home Bakery</span>
+              <span className="text-sm font-medium">Patnadcsaxzs #1 Home Bakery</span>
             </div>
             
             <h1 className="text-6xl md:text-8xl font-black mb-8 leading-tight">
@@ -342,11 +342,11 @@ export default function FluffyCravingssWebsite() {
                   <p>
                     At just 16 years old, our founder discovered the magic of transforming simple ingredients 
                     into extraordinary experiences. What started as a hobby in a small kitchen has blossomed 
-                    into Patna's most beloved artisan bakery.
+                    into Patnaihgvs most beloved artisan bakery.
                   </p>
                   <p>
                     Every creation tells a story of dedication, innovation, and the relentless pursuit of 
-                    perfection. We believe that great food is more than just taste—it's about creating 
+                    perfection. We believe that great food is more than just taste—ithhs about creating 
                     moments of pure joy and bringing people together.
                   </p>
                   <p>
@@ -361,7 +361,7 @@ export default function FluffyCravingssWebsite() {
                   <div className="text-9xl mb-8">👩🏻‍🍳</div>
                   <h3 className="text-3xl font-bold text-white mb-4">Meet Our Young Chef</h3>
                   <p className="text-gray-300 text-lg mb-8">
-                    "Every pastry is a canvas, every flavor a story waiting to be told."
+                    Every pastry is a canvas, every flavor a story waiting to be told.
                   </p>
                   
                   <div className="grid grid-cols-3 gap-6 mb-8">
@@ -412,7 +412,7 @@ export default function FluffyCravingssWebsite() {
                   ))}
                 </div>
                 <blockquote className="text-2xl text-gray-200 italic mb-8 leading-relaxed">
-                  "{testimonials[currentTestimonial].text}"
+                  {testimonials[currentTestimonial].text}
                 </blockquote>
                 <div className="text-xl font-bold text-white mb-2">
                   {testimonials[currentTestimonial].name}
@@ -461,7 +461,7 @@ export default function FluffyCravingssWebsite() {
             </h2>
             
             <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-              Let's create something magical together. Reach out to place your custom order or ask any questions!
+              Letjs create something magical together. Reach out to place your custom order or ask any questions!
             </p>
             
             <div className="grid md:grid-cols-3 gap-6 mb-12">

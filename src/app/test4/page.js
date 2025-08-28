@@ -208,7 +208,7 @@ const FluffyCravingss = () => {
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-10 md:mb-0">
               <div className="inline-flex items-center bg-pink-100 text-pink-700 rounded-full px-4 py-2 mb-6">
-                <span className="text-sm font-semibold">Patna's Most Loved Bakery</span>
+                <span className="text-sm font-semibold">Patnas Most Loved Bakery</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
                 Handcrafted <span className="text-pink-600">Happiness</span> Delivered to Your Door
@@ -257,7 +257,7 @@ const FluffyCravingss = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Our Story</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">From a small kitchen to Patna's favorite bakery</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">From a small kitchen to Patnas favorite bakery</p>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/2">
@@ -276,12 +276,12 @@ const FluffyCravingss = () => {
             <div className="md:w-1/2">
               <h3 className="text-2xl font-heading font-bold mb-6">Baking with Passion Since 2022</h3>
               <p className="text-gray-600 mb-6">
-                What started as a hobby in a small kitchen has blossomed into Patna's most beloved artisan bakery. 
+                What started as a hobby in a small kitchen has blossomed into Patnas most beloved artisan bakery. 
                 Our young founder discovered the magic of transforming simple ingredients into extraordinary experiences.
               </p>
               <p className="text-gray-600 mb-8">
                 Every creation tells a story of dedication, innovation, and the relentless pursuit of perfection. 
-                We believe that great food is more than just taste—it's about creating moments of pure joy.
+                We believe that great food is more than just taste—its about creating moments of pure joy.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center">
@@ -360,7 +360,7 @@ const FluffyCravingss = () => {
                     <div className="text-sm text-gray-600">{testimonial.role}</div>
                   </div>
                 </div>
-                <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+                <p className="text-gray-700 mb-4 italic">{testimonial.text}</p>
                 <div className="flex items-center">
                   <div className="flex text-yellow-400 mr-2">
                     {"★".repeat(testimonial.rating)}
@@ -378,7 +378,7 @@ const FluffyCravingss = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Get In Touch</h2>
-            <p className="max-w-2xl mx-auto">Ready to order or have questions? We'd love to hear from you!</p>
+            <p className="max-w-2xl mx-auto">Ready to order or have questions? Wed love to hear from you!</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>

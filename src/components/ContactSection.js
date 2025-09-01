@@ -12,7 +12,7 @@ export default function ContactSection({ownerEmail,ownerNumber}) {
               Get In Touch
             </h2>
             <p className="max-w-2xl mx-auto">
-              Ready to order or have questions? Wed love to hear from you!
+              Ready to order or have questions? We&apos;d love to hear from you!
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

@@ -97,7 +97,7 @@ export default function Footer({ scrollToSection, ownerEmail, ownerNumber }) {
         {/* Developer Credits Section */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 space-y-3">
           <p className="text-sm">
-            © 2024 Fluffy Cravingss. Made with ❤️ for sweet dreams and delicious treats.
+            © 2025 Fluffy Cravingss. Made with ❤️ for sweet dreams and delicious treats.
           </p>
           <div className="text-xs space-y-2">
            

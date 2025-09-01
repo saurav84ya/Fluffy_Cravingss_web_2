@@ -175,6 +175,20 @@ const FluffyCravingss = () => {
       image: "👩🏻‍🎨",
       location: "Khalilabad",
     },
+
+    
+    
+    {
+      id: 4,
+      name: "Shiddhvi",
+      role: "Makeup artist",
+      text:"Bomobolonies were too goood bbg They were full of sweetness ,and very soft My whole family loved it🩷🤌🏻",
+      rating: 4,
+      image: "👩🏻‍💼",
+      location: "Khalilabad",
+    },
+
+    
   ];
 
   return (

@@ -39,17 +39,16 @@ export default function AboutSection({ age }) {
       Baking with Passion Since 2022
     </h3>
     <p className="text-gray-600 mb-6">
-      Baking with Passion Since 2022 What started as a hobby in a small
-      kitchen has grown into Khalilabad&apos;s most loved home bakery.
-      Our young founder discovered the joy of turning simple ingredients
-      into delightful treats that bring smiles and sweet memories.
+      Hi, I&apos;m Ashita — the {age}-year-old founder of Fluffy Cravingss. What started as a small hobby in my kitchen has now grown into Khalilabad&apos;s most loved home bakery. 💕
     </p>
     <p className="text-gray-600 mb-8">
-      Every creation reflects dedication, creativity, and the love for
-      making every bite special. At Fluffy Cravingss, we believe that
-      baking is not just about taste – it&apos;s about creating moments
-      of happiness and celebration.
+      I&apos;ve always loved transforming simple ingredients into something magical. Every bomboloni, donut, or brownie bite isn&apos;t just dessert — it&apos;s a little piece of my creativity, dedication, and love. ✨
+
     </p>
+     <p className="text-gray-600 mb-8">For me, Fluffy Cravingss is more than just baking — it&apos;s about spreading happiness, creating memories, and living my dream one sweet bite at a time. 🍩🎂💖
+
+    </p>
+
     <div className="grid grid-cols-2 gap-6">
       <div className="flex items-center">
         <div className="bg-pink-100 p-3 rounded-full mr-4">

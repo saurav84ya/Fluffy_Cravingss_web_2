@@ -3,9 +3,21 @@ import React, { useState } from 'react'
 import { ShoppingBag, Plus, Minus, X, MessageCircle, Sparkles, CreditCard } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-export default function MenuItems({menuItems, ownerNumber}) {
+// Sample menu data
+
+
+export default function MenuItems({ ownerNumber , menuItems }) {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState('All');
+
+  // Get unique categories from menu items
+  const categories = ['All', ...new Set(menuItems.map(item => item.category))];
+
+  // Filter menu items based on active category
+  const filteredMenuItems = activeCategory === 'All' 
+    ? menuItems 
+    : menuItems.filter(item => item.category === activeCategory);
 
   const addToCart = (item) => {
     const existingItem = cart.find((cartItem) => cartItem.id === item.id);
@@ -77,6 +89,11 @@ export default function MenuItems({menuItems, ownerNumber}) {
     return `https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`;
   };
 
+  const showToast = (message) => {
+    // Simple toast simulation - you can replace with actual toast library
+    console.log(message);
+  };
+
   return (
     <>
       <section
@@ -88,13 +105,40 @@ export default function MenuItems({menuItems, ownerNumber}) {
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
               Our Menu
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
               Delicious treats made with the finest ingredients
             </p>
+
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
+                    activeCategory === category
+                      ? 'bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow-lg shadow-pink-500/30'
+                      : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-pink-300 hover:text-pink-600 hover:shadow-md'
+                  }`}
+                >
+                  {category}
+                  {category !== 'All' && (
+                    <span className="ml-2 bg-white/20 px-2 py-0.5 rounded-full text-xs">
+                      {menuItems.filter(item => item.category === category).length}
+                    </span>
+                  )}
+                  {category === 'All' && (
+                    <span className="ml-2 bg-white/20 px-2 py-0.5 rounded-full text-xs">
+                      {menuItems.length}
+                    </span>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
-            {menuItems.map((item) => (
+            {filteredMenuItems.map((item) => (
               <div
                 key={item.id}
                 className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
@@ -115,21 +159,29 @@ export default function MenuItems({menuItems, ownerNumber}) {
                         ₹{item.originalPrice}
                       </span>
                     </div>
-                  <button
-  onClick={() => {
-    addToCart(item);
-    toast.success("Added to cart");
-  }}
-  className="bg-pink-500 text-white cursor-pointer px-4 py-2 rounded-full text-sm font-semibold hover:bg-pink-600 transition-colors"
->
-  Add to Cart
-</button>
-
+                    <button
+                      onClick={() => {
+                        addToCart(item);
+                        toast.success("Added to cart");
+                      }}
+                      className="bg-pink-500 text-white cursor-pointer px-4 py-2 rounded-full text-sm font-semibold hover:bg-pink-600 transition-colors"
+                    >
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Show message when no items match filter */}
+          {filteredMenuItems.length === 0 && (
+            <div className="text-center py-12">
+              <div className="text-6xl mb-4">😔</div>
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">No items found</h3>
+              <p className="text-gray-500">Try selecting a different category</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -144,7 +196,7 @@ export default function MenuItems({menuItems, ownerNumber}) {
             <div className="absolute border inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity animate-pulse"></div>
             
             {/* Main Button */}
-            <div className="relative bg-gradient-to-br  from-pink-500 to-orange-500 p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 group-hover:shadow-purple-500/25">
+            <div className="relative bg-gradient-to-br from-pink-500 to-orange-500 p-4 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-110 group-hover:shadow-purple-500/25">
               <ShoppingBag className="w-6 h-6 text-white" />
               
               {/* Item Count Badge */}
@@ -204,12 +256,12 @@ export default function MenuItems({menuItems, ownerNumber}) {
                     <div className="flex items-center space-x-3">
                       <div className="relative">
                         <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl blur opacity-30"></div>
-                        <div className="relative bg-gradient-to-br  from-pink-500 to-orange-500 p-3 rounded-2xl">
+                        <div className="relative bg-gradient-to-br from-pink-500 to-orange-500 p-3 rounded-2xl">
                           <ShoppingBag className="w-6 h-6 text-white" />
                         </div>
                       </div>
                       <div>
-                        <h2 className="text-2xl font-bold bg-gradient-to-r  from-pink-500 to-orange-500 bg-clip-text text-transparent">
+                        <h2 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">
                           Your Cart
                         </h2>
                         <p className="text-gray-500 text-sm">{cart.length} items selected</p>
@@ -219,7 +271,7 @@ export default function MenuItems({menuItems, ownerNumber}) {
                     {/* Cart Item Count Badge */}
                     <div className="relative">
                       <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full blur opacity-30"></div>
-                      <div className="relative bg-gradient-to-br from-[#7EBCAC] to-emerald-500 text-white px-4 py-2 rounded-full font-bold text-sm">
+                      <div className="relative bg-gradient-to-br from-teal-400 to-emerald-500 text-white px-4 py-2 rounded-full font-bold text-sm">
                         {getTotalItems()} Items
                       </div>
                     </div>
@@ -227,24 +279,28 @@ export default function MenuItems({menuItems, ownerNumber}) {
 
                   {/* Cart Items */}
                   <div className="space-y-4 mb-8 max-h-96 overflow-y-auto">
-                    {cart.map((item, index) => (
+                    {cart.map((item) => (
                       <div
                         key={item.id}
                         className="group bg-gradient-to-r from-gray-50 to-white border border-gray-100 rounded-2xl p-5 hover:shadow-lg hover:border-purple-200 transition-all duration-300 transform hover:-translate-y-1"
                       >
-                        <div className="flex justify-between items-center">
-                          <div className="flex-1">
-                            <h3 className="font-semibold text-gray-800 hover:text-pink-500  transition-colors">
+                        <div className="flex justify-between items-center flex-wrap gap-4">
+                          {/* Left - Name + Price */}
+                          <div className="flex-1 min-w-[150px]">
+                            <h3 className="font-semibold text-gray-800 hover:text-pink-500 transition-colors">
                               {item.name}
                             </h3>
                             <div className="flex items-center space-x-2 mt-1">
-                              <span className="text-lg font-bold text-pink-600">₹{item.price}</span>
+                              <span className="text-lg font-bold text-pink-600">
+                                ₹{item.price}
+                              </span>
                               <span className="text-gray-400">per unit</span>
                             </div>
                           </div>
-                          
-                          {/* Quantity Controls */}
-                          <div className="flex items-center space-x-3">
+
+                          {/* Right - Quantity + Subtotal + Remove */}
+                          <div className="flex flex-col md:flex-row items-center gap-3 w-full md:w-auto">
+                            {/* Quantity Controls */}
                             <div className="flex items-center bg-white border-2 border-gray-200 rounded-full overflow-hidden shadow-sm">
                               <button
                                 onClick={() => decreaseQty(item.id)}
@@ -262,19 +318,21 @@ export default function MenuItems({menuItems, ownerNumber}) {
                                 <Plus className="w-4 h-4" />
                               </button>
                             </div>
-                            
-                            {/* Subtotal */}
-                            <div className="text-right min-w-[80px]">
-                              <div className="font-bold text-gray-800">₹{item.price * item.quantity}</div>
+
+                            {/* Subtotal + Remove */}
+                            <div className="flex items-center gap-5">
+                              <div className="text-right min-w-[80px]">
+                                <div className="font-bold text-gray-800">
+                                  ₹{item.price * item.quantity}
+                                </div>
+                              </div>
+                              <button
+                                onClick={() => removeFromCart(item.id)}
+                                className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-all duration-200 hover:scale-110"
+                              >
+                                <X className="w-5 h-5" />
+                              </button>
                             </div>
-                            
-                            {/* Remove Button */}
-                            <button
-                              onClick={() => removeFromCart(item.id)}
-                              className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-all duration-200 hover:scale-110"
-                            >
-                              <X className="w-5 h-5" />
-                            </button>
                           </div>
                         </div>
                       </div>
@@ -312,7 +370,7 @@ export default function MenuItems({menuItems, ownerNumber}) {
                       href={generateWhatsAppLink()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative block w-full bg-gradient-to-r from-pink-500  to-orange-400 text-white font-bold text-lg py-4 px-8 rounded-2xl text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group overflow-hidden"
+                      className="relative block w-full bg-gradient-to-r from-pink-500 to-orange-400 text-white font-bold text-lg py-4 px-8 rounded-2xl text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group overflow-hidden"
                       onClick={() => setIsCartOpen(false)}
                     >
                       {/* Button Shine Effect */}
@@ -350,5 +408,5 @@ export default function MenuItems({menuItems, ownerNumber}) {
         </div>
       )}
     </>
-  )
+  );
 }

@@ -93,7 +93,7 @@ const menuItems = [
     category: "Bombolonies",
     description:
       "Golden caramelized top with silky vanilla custard inside — a chef’s signature 🍮",
-    price: "40",
+    price: "50",
     originalPrice: "60",
     image: "🍮",
     rating: 5.0,
@@ -147,7 +147,7 @@ const menuItems = [
       "Golden fried churros served with rich chocolate dip — happiness in a box 🥖",
     price: "70",
     originalPrice: "90",
-    image: "🥖",
+    image: "🥨",
     rating: 4.6,
     orders: "824",
     tags: ["Classic", "Snack Box"],
@@ -160,7 +160,7 @@ const menuItems = [
       "Share the joy! Bigger box of crispy churros with extra chocolate dip 🎉",
     price: "100",
     originalPrice: "130",
-    image: "🎉",
+    image: "🥨",
     rating: 4.8,
     orders: "1.1k",
     tags: ["Family Pack", "Party Special"],
@@ -198,7 +198,7 @@ const menuItems = [
       role: "teacher ",
       text:"As a teacher, I must say—these Chocolate Bombolonis are top marks! 🍫 Soft, perfectly sweet, and absolutely delightful. A+ for taste! 👩‍🏫",
       rating: 5,
-      image: "👩🏻‍🏫",
+      image: "👨‍🏫",
       location: "Khalilabad",
     },
     {
@@ -227,10 +227,10 @@ const menuItems = [
     {
       id: 5,
       name: "Shiddhvi",
-      role: "Makeup artist",
+      role: "Doctor",
       text:"Bomobolonies were too goood bbg They were full of sweetness ,and very soft My whole family loved it🩷🤌🏻",
       rating: 4,
-      image: "👩🏻‍💼",
+      image: "👩‍⚕️",
       location: "Khalilabad",
     },
 

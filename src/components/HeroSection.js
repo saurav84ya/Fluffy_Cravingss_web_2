@@ -42,20 +42,20 @@ export default function HeroSection({scrollToSection,age}) {
               <div className="relative z-10 bg-white p-6 rounded-3xl shadow-xl">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-pink-100 rounded-2xl p-6 text-center transform rotate-2">
-                    <span className="text-5xl">🍩</span>
-                    <h3 className="font-semibold mt-2">Donuts</h3>
+                    <span className="text-5xl"> 🍮</span>
+                    <h3 className="font-semibold mt-2">bombolonies</h3>
                   </div>
                   <div className="bg-orange-100 rounded-2xl p-6 text-center transform -rotate-2">
-                    <span className="text-5xl">🧁</span>
-                    <h3 className="font-semibold mt-2">Cupcakes</h3>
+                    <span className="text-5xl">🥨</span>
+                    <h3 className="font-semibold mt-2">churros</h3>
                   </div>
                   <div className="bg-yellow-100 rounded-2xl p-6 text-center transform -rotate-2">
-                    <span className="text-5xl">🍪</span>
-                    <h3 className="font-semibold mt-2">Cookies</h3>
+                    <span className="text-5xl">🥐</span>
+                    <h3 className="font-semibold mt-2">croissant</h3>
                   </div>
                   <div className="bg-purple-100 rounded-2xl p-6 text-center transform rotate-2">
-                    <span className="text-5xl">🎂</span>
-                    <h3 className="font-semibold mt-2">Cakes</h3>
+                    <span className="text-5xl">🍩</span>
+                    <h3 className="font-semibold mt-2">Donuts</h3>
                   </div>
                 </div>
               </div>

@@ -25,7 +25,7 @@ export const metadata = {
     url: "/",
     siteName: "Fluffy Cravingss",
     images: [
-      { url: "/cover.jpg", width: 1200, height: 630, alt: "Fluffy Cravingss" }
+      { url: "/https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FKhalilabad%2C_India&psig=AOvVaw3qK9iicG7Gvo5Qyvu4dYSz&ust=1756875172943000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIjL85akuY8DFQAAAAAdAAAAABAE", width: 1200, height: 630, alt: "Fluffy Cravingss" }
     ],
     locale: "en_IN",
     type: "website",

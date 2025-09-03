@@ -271,7 +271,7 @@ export default function MenuItems({ ownerNumber , menuItems }) {
           {/* Enhanced Cart Items with better scrolling */}
           <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 max-h-60 sm:max-h-80 lg:max-h-96 overflow-y-auto pr-2 custom-scrollbar">
             {cart.map((item, index) => (
-            <div className="group bg-gradient-to-r from-white/80 to-gray-50/80 backdrop-blur-sm border border-gray-200/50 hover:border-purple-300/50 rounded-2xl p-3 sm:p-4 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300">
+            <div key={index} className="group bg-gradient-to-r from-white/80 to-gray-50/80 backdrop-blur-sm border border-gray-200/50 hover:border-purple-300/50 rounded-2xl p-3 sm:p-4 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300">
   <div className="flex items-center justify-between gap-3">
     {/* Left - Product Info */}
     <div className="flex-1 min-w-0">

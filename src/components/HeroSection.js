@@ -16,8 +16,7 @@ export default function HeroSection({scrollToSection,age}) {
                 Delivered to Your Door
               </h1>
               <p className="text-lg text-gray-600 mb-8">
-                Experience the magic of artisan baking where every bite tells a
-                story. Created with passion by a {age}-year-old culinary artist.
+               Experience the magic of artisan baking where every bite tells a story — handcrafted happiness, made just for you, created with passion by a {age}-year-old culinary artist. 🌸
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a

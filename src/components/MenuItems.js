@@ -271,61 +271,51 @@ export default function MenuItems({ ownerNumber , menuItems }) {
           {/* Enhanced Cart Items with better scrolling */}
           <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 max-h-60 sm:max-h-80 lg:max-h-96 overflow-y-auto pr-2 custom-scrollbar">
             {cart.map((item, index) => (
-              <div
-                key={item.id}
-                className="group bg-gradient-to-r from-white/80 to-gray-50/80 backdrop-blur-sm border border-gray-200/50 hover:border-purple-300/50 rounded-2xl sm:rounded-3xl p-3 sm:p-4 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 animate-in slide-in-from-bottom-4"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="flex flex-col gap-3 sm:gap-0 sm:flex-row justify-between items-start sm:items-center">
-                  {/* Enhanced Left Section */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-gray-800 hover:text-pink-600 transition-colors duration-200 truncate pr-2">
-                      {item.name}
-                    </h3>
-                    <div className="flex items-center space-x-2 mt-1">
-                      <span className="text-base sm:text-lg font-bold bg-gradient-to-r from-pink-600 to-orange-500 bg-clip-text text-transparent">
-                        ₹{item.price}
-                      </span>
-                      <span className="text-gray-400 text-xs sm:text-sm">per unit</span>
-                    </div>
-                  </div>
+            <div className="group bg-gradient-to-r from-white/80 to-gray-50/80 backdrop-blur-sm border border-gray-200/50 hover:border-purple-300/50 rounded-2xl p-3 sm:p-4 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300">
+  <div className="flex items-center justify-between gap-3">
+    {/* Left - Product Info */}
+    <div className="flex-1 min-w-0">
+      <h3 className="font-semibold text-gray-800 hover:text-pink-600 transition-colors duration-200 truncate text-sm sm:text-base">
+        {item.name}
+      </h3>
+      <span className="text-sm sm:text-base font-bold bg-gradient-to-r from-pink-600 to-orange-500 bg-clip-text text-transparent">
+        ₹{item.price}
+      </span>
+    </div>
 
-                  {/* Enhanced Right Section */}
-                  <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
-                    {/* Enhanced Quantity Controls */}
-                    <div className="flex items-center bg-white/90 backdrop-blur-sm border border-gray-200 hover:border-purple-300 rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
-                      <button
-                        onClick={() => decreaseQty(item.id)}
-                        className="p-2 sm:p-2.5 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 text-gray-600 hover:text-purple-600 transform active:scale-95"
-                      >
-                        <Minus className="w-3 h-3 sm:w-4 sm:h-4" />
-                      </button>
-                      <span className="px-3 sm:px-4 py-1 sm:py-1.5 font-bold text-orange-700 bg-gradient-to-r from-purple-50 to-pink-50 min-w-[2.5rem] text-center">
-                        {item.quantity}
-                      </span>
-                      <button
-                        onClick={() => increaseQty(item.id)}
-                        className="p-2 sm:p-2.5 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 text-gray-600 hover:text-purple-600 transform active:scale-95"
-                      >
-                        <Plus className="w-3 h-3 sm:w-4 sm:h-4" />
-                      </button>
-                    </div>
+    {/* Center - Quantity Controls (Compact) */}
+    <div className="flex items-center bg-white/90 backdrop-blur-sm border border-gray-200 hover:border-purple-300 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
+      <button
+        onClick={() => decreaseQty(item.id)}
+        className="p-1.5 sm:p-2 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 text-gray-600 hover:text-purple-600 transform active:scale-95"
+      >
+        <Minus className="w-3 h-3" />
+      </button>
+      <span className="px-2 sm:px-3 py-1 font-bold text-orange-700 bg-gradient-to-r from-purple-50 to-pink-50 min-w-[2rem] text-center text-sm">
+        {item.quantity}
+      </span>
+      <button
+        onClick={() => increaseQty(item.id)}
+        className="p-1.5 sm:p-2 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 text-gray-600 hover:text-purple-600 transform active:scale-95"
+      >
+        <Plus className="w-3 h-3" />
+      </button>
+    </div>
 
-                    {/* Enhanced Subtotal + Remove */}
-                    <div className="flex items-center gap-3 sm:gap-4">
-                      <div className="font-bold text-gray-800 text-lg bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text">
-                        ₹{item.price * item.quantity}
-                      </div>
-                      <button
-                        onClick={() => removeFromCart(item.id)}
-                        className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-all duration-200 transform hover:scale-110 active:scale-95 hover:shadow-md"
-                      >
-                        <X className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    {/* Right - Total + Remove */}
+    <div className="flex items-center gap-2 sm:gap-3">
+      <div className="font-bold text-gray-800 text-sm sm:text-base bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text">
+        ₹{item.price * item.quantity}
+      </div>
+      <button
+        onClick={() => removeFromCart(item.id)}
+        className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-all duration-200 transform hover:scale-110 active:scale-95"
+      >
+        <X className="w-3.5 h-3.5" />
+      </button>
+    </div>
+  </div>
+</div>
             ))}
           </div>
 

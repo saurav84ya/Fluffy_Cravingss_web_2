@@ -55,7 +55,7 @@ export default function ContactSection({ownerEmail,ownerNumber}) {
                 Send us a Message
               </h3>
              <form 
-  action="https://getform.io/f/bjjrrmxb" 
+  action="https://getform.io/f/bjjrrxyb" 
   method="POST" 
   className="space-y-6 max-w-lg mx-auto"
 >

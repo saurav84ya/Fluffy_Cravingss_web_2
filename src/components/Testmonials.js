@@ -2,7 +2,9 @@ import React from 'react'
 
 export default function Testmonials({testimonials}) {
   return (
-      <section id="reviews" className="py-20 bg-white">
+      <section id="reviews" className="py-20  bg-gradient-to-bl
+ from-purple-200 via-white to-orange-100 "
+    >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">

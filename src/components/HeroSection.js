@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function HeroSection({scrollToSection,age}) {
   return (
-    <section id="home" className="pt-32 md:pt-0 md:pb-0 pb-20 px-4">
+    <section id="home" className="pt-32 md:pt-0 md:pb-0 pb-20 px-4  bg-gradient-to-br from-pink-100 via-white to-purple-200 ">
         <div className="container mx-auto">
           <div className="flex flex-col min-h-screen  md:flex-row items-center">
             <div className="md:w-1/2 mb-10 md:mb-0">

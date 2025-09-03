@@ -28,7 +28,7 @@ export default function Navbar({
   }, [menuRef]);
 
   return (
-    <header className="fixed w-full bg-white shadow-md z-50">
+   <header className="fixed w-full bg-white/30 backdrop-blur-md shadow-md z-50">
       <div className="container mx-auto px-4 py-4 cursor-pointer flex justify-between items-center">
         <div
           onClick={() => scrollToSection("home")}
@@ -87,7 +87,7 @@ export default function Navbar({
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div   ref={menuRef} className="md:hidden bg-white py-4 px-4 shadow-inner">
+        <div   ref={menuRef} className="md:hidden backdrop-blur-md  z-50 py-4 px-4 shadow-inner">
           <div className="flex flex-col space-y-4">
             {["about", "menu", "reviews", "contact"].map(
               (item) => (

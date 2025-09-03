@@ -238,14 +238,8 @@ const menuItems = [
   ];
 
   return (
-    <div className=" text-gray-800 bg-gradient-to-br from-pink-50 via-white to-purple-50">
+    <div className=" text-gray-800">
       {/* Header */}
-
-
-           
-
-
-
       <Navbar
         activeSection={activeSection}
         isMenuOpen={isMenuOpen}

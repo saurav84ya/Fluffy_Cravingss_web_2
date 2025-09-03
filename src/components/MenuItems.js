@@ -98,7 +98,9 @@ export default function MenuItems({ ownerNumber , menuItems }) {
     <>
       <section
         id="menu"
-        className="py-20 bg-gradient-to-br from-pink-50 to-orange-50"
+        className="py-20  bg-gradient-to-br
+
+ from-orange-100 via-white to-purple-200"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -214,199 +216,177 @@ export default function MenuItems({ ownerNumber , menuItems }) {
       )}
 
       {/* Cart Modal/Overlay */}
-      {isCartOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
-          {/* Backdrop */}
-          <div 
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity"
-            onClick={() => setIsCartOpen(false)}
-          ></div>
-          
-          {/* Modal Content */}
-          <div className="flex min-h-full items-center justify-center xl:p-4 p-8">
-            <div className="relative w-full max-w-2xl transform transition-all">
-              {/* Close Button */}
-              <button
-                onClick={() => setIsCartOpen(false)}
-                className="absolute -top-4 -right-4 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
+{isCartOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center px-2 sm:px-4">
+    {/* Animated Backdrop */}
+    <div
+      className="fixed inset-0 bg-gradient-to-br from-black/60 via-purple-900/40 to-pink-900/40 backdrop-blur-md transition-all duration-300"
+      onClick={() => setIsCartOpen(false)}
+    ></div>
+
+    {/* Modal Wrapper with bounce animation */}
+    <div className="relative w-full max-w-2xl mx-auto p-2 sm:p-4 lg:p-6 animate-in zoom-in-95 fade-in duration-300">
+      {/* Enhanced Close Button */}
+      <button
+        onClick={() => setIsCartOpen(false)}
+        className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 z-10 bg-gradient-to-br from-white to-gray-50 hover:from-red-50 hover:to-red-100 rounded-full p-2 sm:p-3 shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-200 border border-gray-200 hover:border-red-300"
+      >
+        <X className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 hover:text-red-500 transition-colors" />
+      </button>
+
+      {/* Enhanced Modal Content */}
+      <div className="relative bg-white/95 backdrop-blur-2xl border border-white/30 rounded-3xl shadow-2xl overflow-hidden">
+        {/* Animated Glow Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-400/30 via-pink-400/25 to-blue-400/30 animate-pulse rounded-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent rounded-3xl"></div>
+
+        {/* Content Container */}
+        <div className="relative p-4 sm:p-6 lg:p-8">
+          {/* Enhanced Header */}
+          <div className="flex items-center justify-between mb-6 sm:mb-8">
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                <div className="relative bg-gradient-to-br from-pink-500 via-purple-500 to-orange-500 p-2 sm:p-3 rounded-2xl shadow-lg transform group-hover:scale-105 transition-transform duration-200">
+                  <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                </div>
+              </div>
+              <div>
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-pink-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">
+                  Shopping Cart
+                </h2>
+                <p className="text-gray-500 text-sm sm:text-base">{cart.length} items selected</p>
+              </div>
+            </div>
+
+            {/* Enhanced Item Count Badge */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl blur opacity-40 group-hover:opacity-60 transition-opacity"></div>
+              <div className="relative bg-gradient-to-br from-emerald-500 to-teal-600 text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-2xl font-bold text-xs sm:text-sm shadow-lg transform group-hover:scale-105 transition-transform duration-200">
+                {getTotalItems()} Items
+              </div>
+            </div>
+          </div>
+
+          {/* Enhanced Cart Items with better scrolling */}
+          <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 max-h-60 sm:max-h-80 lg:max-h-96 overflow-y-auto pr-2 custom-scrollbar">
+            {cart.map((item, index) => (
+              <div
+                key={item.id}
+                className="group bg-gradient-to-r from-white/80 to-gray-50/80 backdrop-blur-sm border border-gray-200/50 hover:border-purple-300/50 rounded-2xl sm:rounded-3xl p-3 sm:p-4 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 animate-in slide-in-from-bottom-4"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <X className="w-6 h-6 text-gray-600" />
-              </button>
-
-              {/* Cart Component */}
-              <div className="relative">
-                {/* Background Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 via-pink-400/20 to-blue-400/20 blur-xl rounded-3xl"></div>
-                
-                {/* Main Cart Container */}
-                <div className="relative bg-white/90 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-8 overflow-hidden">
-                  {/* Floating Sparkles */}
-                  <div className="absolute top-4 right-4 text-yellow-400 animate-pulse">
-                    <Sparkles className="w-6 h-6" />
-                  </div>
-                  <div className="absolute top-8 right-12 text-purple-400 animate-bounce" style={{ animationDelay: '0.5s' }}>
-                    <Sparkles className="w-4 h-4" />
-                  </div>
-                  <div className="absolute top-6 right-20 text-pink-400 animate-pulse" style={{ animationDelay: '1s' }}>
-                    <Sparkles className="w-3 h-3" />
-                  </div>
-
-                  {/* Header */}
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="flex items-center space-x-3">
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl blur opacity-30"></div>
-                        <div className="relative bg-gradient-to-br from-pink-500 to-orange-500 p-3 rounded-2xl">
-                          <ShoppingBag className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-                      <div>
-                        <h2 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">
-                          Your Cart
-                        </h2>
-                        <p className="text-gray-500 text-sm">{cart.length} items selected</p>
-                      </div>
-                    </div>
-                    
-                    {/* Cart Item Count Badge */}
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full blur opacity-30"></div>
-                      <div className="relative bg-gradient-to-br from-teal-400 to-emerald-500 text-white px-4 py-2 rounded-full font-bold text-sm">
-                        {getTotalItems()} Items
-                      </div>
+                <div className="flex flex-col gap-3 sm:gap-0 sm:flex-row justify-between items-start sm:items-center">
+                  {/* Enhanced Left Section */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-gray-800 hover:text-pink-600 transition-colors duration-200 truncate pr-2">
+                      {item.name}
+                    </h3>
+                    <div className="flex items-center space-x-2 mt-1">
+                      <span className="text-base sm:text-lg font-bold bg-gradient-to-r from-pink-600 to-orange-500 bg-clip-text text-transparent">
+                        ₹{item.price}
+                      </span>
+                      <span className="text-gray-400 text-xs sm:text-sm">per unit</span>
                     </div>
                   </div>
 
-                  {/* Cart Items */}
-                  <div className="space-y-4 mb-8 max-h-96 overflow-y-auto">
-                    {cart.map((item) => (
-                      <div
-                        key={item.id}
-                        className="group bg-gradient-to-r from-gray-50 to-white border border-gray-100 rounded-2xl p-5 hover:shadow-lg hover:border-purple-200 transition-all duration-300 transform hover:-translate-y-1"
+                  {/* Enhanced Right Section */}
+                  <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                    {/* Enhanced Quantity Controls */}
+                    <div className="flex items-center bg-white/90 backdrop-blur-sm border border-gray-200 hover:border-purple-300 rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
+                      <button
+                        onClick={() => decreaseQty(item.id)}
+                        className="p-2 sm:p-2.5 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 text-gray-600 hover:text-purple-600 transform active:scale-95"
                       >
-                        <div className="flex justify-between items-center flex-wrap gap-4">
-                          {/* Left - Name + Price */}
-                          <div className="flex-1 min-w-[150px]">
-                            <h3 className="font-semibold text-gray-800 hover:text-pink-500 transition-colors">
-                              {item.name}
-                            </h3>
-                            <div className="flex items-center space-x-2 mt-1">
-                              <span className="text-lg font-bold text-pink-600">
-                                ₹{item.price}
-                              </span>
-                              <span className="text-gray-400">per unit</span>
-                            </div>
-                          </div>
-
-                          {/* Right - Quantity + Subtotal + Remove */}
-                          <div className="flex flex-col md:flex-row items-center gap-3 w-full md:w-auto">
-                            {/* Quantity Controls */}
-                            <div className="flex items-center bg-white border-2 border-gray-200 rounded-full overflow-hidden shadow-sm">
-                              <button
-                                onClick={() => decreaseQty(item.id)}
-                                className="p-2 hover:bg-gray-100 transition-colors text-gray-600 hover:text-purple-600"
-                              >
-                                <Minus className="w-4 h-4" />
-                              </button>
-                              <span className="px-4 py-2 font-bold text-orange-700 bg-purple-50">
-                                {item.quantity}
-                              </span>
-                              <button
-                                onClick={() => increaseQty(item.id)}
-                                className="p-2 hover:bg-gray-100 transition-colors text-gray-600 hover:text-purple-600"
-                              >
-                                <Plus className="w-4 h-4" />
-                              </button>
-                            </div>
-
-                            {/* Subtotal + Remove */}
-                            <div className="flex items-center gap-5">
-                              <div className="text-right min-w-[80px]">
-                                <div className="font-bold text-gray-800">
-                                  ₹{item.price * item.quantity}
-                                </div>
-                              </div>
-                              <button
-                                onClick={() => removeFromCart(item.id)}
-                                className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-all duration-200 hover:scale-110"
-                              >
-                                <X className="w-5 h-5" />
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Total Section */}
-                  <div className="relative mb-8">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl opacity-50"></div>
-                    <div className="relative bg-gradient-to-r from-gray-50 to-white border-2 border-purple-200 rounded-2xl p-6">
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <span className="text-gray-600">Total Amount</span>
-                          <div className="flex items-center space-x-2 mt-1">
-                            <CreditCard className="w-5 h-5 text-purple-500" />
-                            <span className="text-sm text-gray-500">Inclusive of all taxes</span>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-3xl font-bold bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent">
-                            ₹{getTotalPrice()}
-                          </div>
-                          <div className="text-sm text-gray-500">
-                            {getTotalItems()} items
-                          </div>
-                        </div>
-                      </div>
+                        <Minus className="w-3 h-3 sm:w-4 sm:h-4" />
+                      </button>
+                      <span className="px-3 sm:px-4 py-1 sm:py-1.5 font-bold text-orange-700 bg-gradient-to-r from-purple-50 to-pink-50 min-w-[2.5rem] text-center">
+                        {item.quantity}
+                      </span>
+                      <button
+                        onClick={() => increaseQty(item.id)}
+                        className="p-2 sm:p-2.5 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 text-gray-600 hover:text-purple-600 transform active:scale-95"
+                      >
+                        <Plus className="w-3 h-3 sm:w-4 sm:h-4" />
+                      </button>
                     </div>
-                  </div>
 
-                  {/* Checkout Button */}
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                    <a
-                      href={generateWhatsAppLink()}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative block w-full bg-gradient-to-r from-pink-500 to-orange-400 text-white font-bold text-lg py-4 px-8 rounded-2xl text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group overflow-hidden"
-                      onClick={() => setIsCartOpen(false)}
-                    >
-                      {/* Button Shine Effect */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                      
-                      <div className="relative flex items-center justify-center space-x-3">
-                        <MessageCircle className="w-6 h-6" />
-                        <span>Checkout on WhatsApp</span>
-                        <div className="bg-white/20 px-2 py-1 rounded-full text-sm">
-                          ₹{getTotalPrice()}
-                        </div>
+                    {/* Enhanced Subtotal + Remove */}
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <div className="font-bold text-gray-800 text-lg bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text">
+                        ₹{item.price * item.quantity}
                       </div>
-                    </a>
-                  </div>
-
-                  {/* Trust Badges */}
-                  <div className="mt-6 flex justify-center space-x-6 text-sm text-gray-500">
-                    <div className="flex items-center space-x-1">
-                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <span>Secure Payment</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                      <span>Fast Delivery</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                      <span>24/7 Support</span>
+                      <button
+                        onClick={() => removeFromCart(item.id)}
+                        className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-all duration-200 transform hover:scale-110 active:scale-95 hover:shadow-md"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Enhanced Total Section */}
+          <div className="bg-gradient-to-r from-white/90 via-purple-50/50 to-pink-50/50 backdrop-blur-sm border border-purple-200/50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 mb-6 shadow-lg">
+            <div className="flex justify-between items-center">
+              <div>
+                <span className="text-gray-600 font-medium">Total Amount</span>
+                <div className="flex items-center space-x-2 mt-1">
+                  <CreditCard className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
+                  <span className="text-xs sm:text-sm text-gray-500">Inclusive of all taxes</span>
+                </div>
+              </div>
+              <div className="text-right">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-pink-600 via-purple-600 to-orange-600 bg-clip-text text-transparent">
+                  ₹{getTotalPrice()}
+                </div>
+                <div className="text-sm text-gray-500">{getTotalItems()} items</div>
+              </div>
             </div>
           </div>
+
+          {/* Enhanced Checkout Button */}
+          <a
+            href={generateWhatsAppLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsCartOpen(false)}
+            className="group block w-full bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 hover:from-pink-600 hover:via-purple-600 hover:to-orange-500 text-white font-bold text-base sm:text-lg py-3 sm:py-4 px-6 rounded-2xl sm:rounded-3xl text-center transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl relative overflow-hidden shadow-lg"
+          >
+            {/* Animated shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            <div className="relative flex items-center justify-center space-x-2 sm:space-x-3">
+              <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+              <span>Checkout on WhatsApp</span>
+              <div className="bg-white/20 backdrop-blur-sm px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm border border-white/20">
+                ₹{getTotalPrice()}
+              </div>
+            </div>
+          </a>
+
+          {/* Enhanced Trust Badges */}
+          <div className="mt-4 sm:mt-6 flex justify-center flex-wrap gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500">
+            {[
+              { color: 'green', text: 'Secure Payment' },
+              { color: 'blue', text: 'Fast Delivery' },
+              { color: 'purple', text: '24/7 Support' }
+            ].map((badge, index) => (
+              <div key={badge.text} className="flex items-center space-x-2 group">
+                <div className={`w-2 h-2 bg-${badge.color}-400 rounded-full animate-pulse`}></div>
+                <span className="group-hover:text-gray-700 transition-colors">{badge.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      )}
+      </div>
+    </div>
+  </div>
+)}
+
+
     </>
   );
 }

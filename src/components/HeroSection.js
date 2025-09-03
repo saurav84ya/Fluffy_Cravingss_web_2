@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function HeroSection({scrollToSection,age}) {
   return (
-    <section id="home" className="pt-32 pb-20 px-4">
+    <section id="home" className="pt-32 md:pt-0 md:pb-0 pb-20 px-4">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-center">
+          <div className="flex flex-col min-h-screen  md:flex-row items-center">
             <div className="md:w-1/2 mb-10 md:mb-0">
               <div className="inline-flex items-center bg-pink-100 text-pink-700 rounded-full px-4 py-2 mb-6">
                 <span className="text-sm font-semibold">

@@ -12,8 +12,8 @@ export default function HeroSection({scrollToSection,age}) {
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
-                Handcrafted <span className="text-pink-600">Happiness</span>{" "}
-                Delivered to Your Door
+                Home baked <span className="text-pink-600">Happiness</span>{" "}
+                 just for you
               </h1>
               <p className="text-lg text-gray-600 mb-8">
                Experience the magic of artisan baking where every bite tells a story — handcrafted happiness, made just for you, created with passion by a {age}-year-old culinary artist. 🌸

@@ -61,6 +61,20 @@ const FluffyCravingss = () => {
   }
 
 const menuItems = [
+  
+  {
+    id: 10,
+    name: "Whole Wheat Crumble Cookies",
+    category: "Cookies",
+    description:
+      "Healthy whole wheat crumble cookies — 4 pieces of guilt-free crunch 🍪",
+    price: "60",
+    originalPrice: "75",
+    image: "🍪",
+    rating: 4.7,
+    orders: "512",
+    tags: ["Healthy", "Crunchy"],
+  },
   {
     id: 1,
     name: "Chocolate Bombolonies",
@@ -177,8 +191,9 @@ const menuItems = [
     rating: 5.0,
     orders: "643",
     tags: ["Gift Box", "Celebration"],
-  },
+  }
 ];
+
 
 
 
